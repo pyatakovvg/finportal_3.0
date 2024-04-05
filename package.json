@@ -1,0 +1,14 @@
+{
+  "name": "finportal_3.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "class-validator": "0.14.1",
+    "class-transformer": "0.5.1"
+  }
+}
