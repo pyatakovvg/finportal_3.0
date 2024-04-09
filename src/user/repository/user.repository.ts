@@ -1,8 +1,10 @@
-import { IUserRepository } from '../user-repository.interface';
+import { Service } from 'typedi';
 
 import { User, Uuid } from "../user.entity";
+import { UserEntity } from './entity/user.entity';
 
-export class UserRepository implements IUserRepository {
+@Service()
+export class UserRepository {
   getByUuidOrFail(uuid: Uuid): User {
     throw new Error('Not realization');
   }
@@ -19,8 +21,15 @@ export class UserRepository implements IUserRepository {
     throw new Error('Not realization');
   }
 
-  create(user: Partial<User>): User {
-    throw new Error('Not realization');
+  create(login: string, password: string): User {
+    const newUser = new UserEntity();
+
+    newUser.uuid = 'uuid';
+    newUser.firstName = 'New user name';
+    newUser.lastName = 'New user lastName';
+    newUser.roles = ['ADMIN'];
+
+    return newUser;
   }
 
   update(user: Partial<User>): User {
